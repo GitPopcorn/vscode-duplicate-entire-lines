@@ -1,0 +1,97 @@
+{
+	"name": "duplicate-entire-lines",
+	"displayName": "Duplicate Entire Lines",
+	"description": "Duplicate the entire lines when the selection touched, behave like the action [Duplicate Entire Lines] in JetBrains IDE.",
+	"version": "0.0.1-SNAPSHOT",
+	"publisher": "GitPopcorn",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/GitPopcorn/vscode-duplicate-entire-lines.git"
+	},
+	"engines": {
+		"vscode": "^1.61.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"Duplicate",
+		"Line",
+		"Selection"
+	],
+	"extensionKind": [
+		"ui",
+		"workspace"
+	],
+	"capabilities": {
+		"virtualWorkspaces": true,
+		"untrustedWorkspaces": {
+			"supported": true
+		}
+	},
+	"activationEvents": [
+		"onCommand:duplicate-entire-lines.duplicate",
+		"onCommand:duplicate-entire-lines.duplicateBefore",
+		"onCommand:duplicate-entire-lines.duplicateAfter"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "duplicate-entire-lines.duplicate",
+				"category": "Duplicate Entire Lines",
+				"title": "Duplicate lines in selection"
+			},
+			{
+				"command": "duplicate-entire-lines.duplicateBefore",
+				"category": "Duplicate Entire Lines",
+				"title": "Duplicate lines in selection before"
+			},
+			{
+				"command": "duplicate-entire-lines.duplicateAfter",
+				"category": "Duplicate Entire Lines",
+				"title": "Duplicate lines in selection after"
+			}
+		],
+		"keybindings": [
+			{
+				"mac": "cmd+alt+d",
+				"key": "ctrl+alt+d",
+				"command": "duplicate-entire-lines.duplicate",
+				"when": "editorTextFocus && !editorReadonly"
+			}
+		],
+		"configuration": {
+			"title": "Duplicate Entire Lines",
+			"properties": {
+				"duplicateEntireLines.defaultInsertBefore": {
+					"type": "boolean",
+					"default": true,
+					"markdownDescription": "If default to insert duplicates before source when not asked"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.61.0",
+		"@types/glob": "^7.1.4",
+		"@types/mocha": "^9.0.0",
+		"@types/node": "14.x",
+		"@typescript-eslint/eslint-plugin": "^5.1.0",
+		"@typescript-eslint/parser": "^5.1.0",
+		"eslint": "^8.1.0",
+		"glob": "^7.1.7",
+		"mocha": "^9.1.3",
+		"typescript": "^4.4.4",
+		"@vscode/test-electron": "^1.6.2"
+	},
+	"dependencies": {}
+}
