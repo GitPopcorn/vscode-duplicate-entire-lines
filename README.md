@@ -33,6 +33,10 @@ Multi-selection with intersections and bottom reaching situation has not be test
 
 The version below:
 
+### 0.0.2-SNAPSHOT
+
+Modify the activation point to make this plugin active after VSCode startup.
+
 ### 0.0.1-SNAPSHOT
 
 Finish first valid version.

@@ -2,7 +2,7 @@
 	"name": "duplicate-entire-lines",
 	"displayName": "Duplicate Entire Lines",
 	"description": "Duplicate the entire lines when the selection touched, behave like the action [Duplicate Entire Lines] in JetBrains IDE.",
-	"version": "0.0.1-SNAPSHOT",
+	"version": "0.0.2-SNAPSHOT",
 	"publisher": "GitPopcorn",
 	"repository": {
 		"type": "git",
@@ -30,9 +30,7 @@
 		}
 	},
 	"activationEvents": [
-		"onCommand:duplicate-entire-lines.duplicate",
-		"onCommand:duplicate-entire-lines.duplicateBefore",
-		"onCommand:duplicate-entire-lines.duplicateAfter"
+		"onStartupFinished"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
